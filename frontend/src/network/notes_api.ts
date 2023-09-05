@@ -1,4 +1,3 @@
-import { Interface } from "readline";
 import { Note } from "../models/note";
 
 async function fetchData(input: RequestInfo, init?: RequestInit) {

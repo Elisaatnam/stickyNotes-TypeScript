@@ -18,8 +18,10 @@ const AddNoteDialog = ({ onDismiss, onNoteSaved }: AddNoteDialogProps) => {
 
 	async function onSubmit(input: NoteInput) {
 		try {
-			const noteResponse = await NotesApi.createNote(input);
-			/* onNoteSaved(noteResponse); */
+			let noteResponse: Note;
+			noteResponse = await NotesApi.createNote(input);
+
+			onNoteSaved(noteResponse);
 		} catch (error) {
 			console.error(error);
 			alert(error);
